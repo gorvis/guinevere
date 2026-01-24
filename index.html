@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guinevere Orvis - Digital products and applications portfolio">
+    <title>Guinevere Orvis</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=1">
+    <link rel="icon" type="image/png" href="favicon.png?v=1">
+    <link rel="shortcut icon" href="favicon.ico?v=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #2c3e50;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        .support-bar {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .support-btn-small {
+            padding: 0.4rem 0.9rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-decoration: none;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            letter-spacing: 0.03em;
+            backdrop-filter: blur(10px);
+        }
+
+        .support-btn-small:hover,
+        .support-btn-small:focus {
+            background: rgba(0, 0, 0, 0.7);
+            outline: 2px solid #ffd93d;
+            outline-offset: 2px;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), 
+                        url('assets/photo-1506905925346-21bda4d32df4.jpeg') center/cover no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 300;
+            opacity: 0.95;
+            letter-spacing: 0.15em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            font-style: italic;
+            margin-bottom: 3rem;
+        }
+
+        .hero-nav {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            letter-spacing: 0.05em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-nav a:hover,
+        .hero-nav a:focus {
+            color: #4facfe;
+            outline: 2px solid #ffd93d;
+            outline-offset: 4px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: white;
+            font-size: 2.5rem;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .parallax-divider {
+            height: 50vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .parallax-1 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+                              url('assets/sam-schultz-7-EuyABGKRo-unsplash.jpg');
+        }
+
+        .parallax-2 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+                              url('assets/photo-1454496522488-7a8e488e8606.jpeg');
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            position: relative;
+            background: white;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #1e3c72;
+            letter-spacing: 0.02em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 4rem;
+            font-style: italic;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 2;
+            text-align: center;
+            color: #34495e;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .personal-note {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+            font-style: italic;
+            color: #5a6c7d;
+            font-size: 1.1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            position: relative;
+            background: white;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            aspect-ratio: 1.2;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .project-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-link:focus {
+            outline: 4px solid #ffd93d;
+            outline-offset: 4px;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(135deg, #e8ecf1 0%, #d5dce3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s;
+            color: #94a3b8;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 2rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.08);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.96) 0%, rgba(79, 172, 254, 0.96) 100%);
+            color: white;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .project-card:hover .project-overlay,
+        .project-card:focus-within .project-overlay {
+            opacity: 1;
+        }
+
+        .project-title {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .project-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            opacity: 0.95;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .platforms {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .platform-badge {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            padding: 0.4rem 1rem;
+            border-radius: 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            color: #1e3c72;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+        }
+
+        .contact-link:hover,
+        .contact-link:focus {
+            color: #4facfe;
+            outline: 2px solid #ffd93d;
+            outline-offset: 4px;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .photo-credit {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .photo-credit a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .parallax-divider {
+                height: 30vh;
+                background-attachment: scroll;
+            }
+
+            .hero {
+                background-attachment: scroll;
+            }
+
+            .support-bar {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+            
+            .parallax-divider,
+            .hero {
+                background-attachment: scroll !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="support-bar">
+        <a href="https://www.buymeacoffee.com/gorvis" class="support-btn-small" target="_blank" rel="noopener noreferrer" aria-label="Buy me a coffee">
+            ☕ Coffee
+        </a>
+        <a href="https://www.blockchain.com/explorer/addresses/btc/bc1qwrhxyyg2mwvx77nc5uccmclqah88nuxqf97l03" class="support-btn-small" aria-label="Bitcoin" target="_blank" rel="noopener noreferrer">
+            ₿ Bitcoin
+        </a>
+        <a href="https://github.com/gorvis" class="support-btn-small" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            💻 GitHub
+        </a>
+    </div>
+
+    <section class="hero" role="banner">
+        <div class="hero-content">
+            <div class="profile-pic">
+                <img src="assets/guinevere.png" alt="Profile photo">
+            </div>
+            <h1>Guinevere Orvis</h1>
+            <p class="hero-subtitle"></p>
+            
+            <nav class="hero-nav" aria-label="Main navigation">
+                <a href="#work">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">↓</div>
+    </section>
+
+    <main>
+        <section id="work" class="section" aria-label="Portfolio projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A selection of digital products and experiences I've worked on independently or as part of a team.</p>
+                <div class="projects-grid" id="projects-grid"></div>
+            </div>
+        </section>
+
+        <div class="parallax-divider parallax-1" aria-hidden="true"></div>
+
+        <section id="about" class="section section-alt" aria-label="About">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <div class="about-content">
+                    <p>I'm a 🇨🇦 technologist and CTO working at the intersection of AI, product development, and technology innovation. My work spans entertainment, sports and news media, telco, food security, consumer and enterprise applications.</p>
+                    <div class="personal-note">
+                        <p>When I’m not working, you’ll find me playing sports, tinkering with new ideas, or teaching the next generation of product managers at York University. I grew up in Dryden, Ontario, live in Toronto, and feel most at home by the water or in the mountains. Above all, I cherish time with my family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="parallax-divider parallax-2" aria-hidden="true"></div>
+
+        <section id="contact" class="section" aria-label="Contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/gorvis/" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Guinevere Orvis. All rights reserved.</p>
+        <p class="photo-credit">Photos by <a href="https://unsplash.com/@bertvthul?utm_source=portfolio&utm_medium=referral" target="_blank" rel="noopener noreferrer">Bert Vanthul</a>, <a href="https://unsplash.com/@samschultz13?utm_source=portfolio&utm_medium=referral" target="_blank" rel="noopener noreferrer">Sam Schultz</a>, and <a href="https://unsplash.com/@mattdonders?utm_source=portfolio&utm_medium=referral" target="_blank" rel="noopener noreferrer">Matt Donders</a> on <a href="https://unsplash.com/?utm_source=portfolio&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+    </footer>
+
+    <script>
+        const projects = [
+            {
+                name: 'CBC',
+                description: 'Canada\'s national public broadcaster providing news, entertainment, and cultural content.',
+                url: 'https://www.cbc.ca',
+                platforms: ['Web','Digital Content','Streaming'],
+                screenshot: 'assets/tile-cbc.png'
+            },
+            {
+                name: 'Design Vibes',
+                description: 'This product is in development and coming soon.',
+                url: '',
+                platforms: ['AI','iOS', 'Android'],
+                screenshot: 'assets/tile-dv.png'
+            },
+            {
+                name: 'Driving.ca',
+                description: 'Automotive news, reviews, and resources for Canadian car enthusiasts.',
+                url: 'https://www.driving.ca',
+                platforms: ['Web App'],
+                screenshot: 'assets/tile-driving.png'
+            },
+            {
+                name: 'Financial Post',
+                description: 'Comprehensive business and financial news platform for Canadian markets.',
+                url: 'https://www.financialpost.com',
+                platforms: ['Web','iOS','Android'],
+                screenshot: 'assets/tile-financial-post.png'
+            },
+                        {
+                name: 'FP Advisor',
+                description: 'Subscription based product containing detailed information about Canadian public and private companies.',
+                url: 'https://fpadvisor.financialpost.com',
+                platforms: ['Web App'],
+                screenshot: 'assets/tile-fp-advisor.png'
+            },
+            {
+                name: 'Food Rescue App',
+                description: 'Mobile application connecting food donors with charities to rescue surplus food.',
+                url: 'https://foodrescue.secondharvest.ca',
+                platforms: ['AI', 'Web App', 'iOS', 'Android'],
+                screenshot: 'assets/tile-secondharvest.png'
+            },
+            {
+                name: 'The Growth Op',
+                description: 'Business site covering the cannabis industry in Canada with news, analysis, and market trends.',
+                url: 'https://www.thegrowthop.com',
+                platforms: ['Web'],
+                screenshot: 'assets/tile-thegrowthop.png'
+            },
+            {
+                name: 'Healthing.ca',
+                description: 'Health and wellness news platform providing expert medical information and lifestyle tips.',
+                url: 'https://www.healthing.ca',
+                platforms: ['Web'],
+                screenshot: 'assets/tile-healthing.png'
+            },
+            {
+                name: 'Hockey Night in Canada',
+                description: 'Interactive hockey viewing experience with live games and enhanced features for Xbox. Now part of Sportsnet.',
+                url: 'https://www.cbc.ca/sports/hockey',
+                platforms: ['Xbox'],
+                screenshot: 'assets/tile-hnic.png'
+            },
+            {
+                name: 'Horizontal Tabs',
+                description: 'Safari extension for managing tabs horizontally with improved navigation and organization.',
+                url: 'https://apps.apple.com/app/horizontal-tabs',
+                platforms: ['macOS','Safari Extension'],
+                screenshot: 'assets/tile-safari-tabs.png'
+            },
+            {
+                name: 'MLB At The Ballpark',
+                description: 'Official MLB app for in-stadium experiences, tickets, and exclusive content.',
+                url: 'https://www.mlb.com/apps/ballpark',
+                platforms: ['iOS', 'Android'],
+                screenshot: 'assets/tile-mlb-ballpark.png'
+            },
+            {
+                name: 'National Post',
+                description: 'Leading Canadian national newspaper covering politics, business, and current affairs.',
+                url: 'https://www.nationalpost.com',
+                platforms: ['Web'],
+                screenshot: 'assets/tile-national-post.png'
+            },
+            {
+                name: 'Northern Youth',
+                description: 'Platform supporting youth development and opportunities in Northern Canadian communities.',
+                url: 'https://www.northernyouth.ca',
+                platforms: ['Web'],
+                screenshot: 'assets/tile-northern-youth-leadership.png'
+            },
+            {
+                name: 'Olympics',
+                description: 'Multiple Olympics at CBC and Sportsnet facilitating coverage of Olympic Games with live streaming, results, and athlete stories.',
+                url: 'https://www.cbc.ca/sports/olympics',
+                platforms: ['Web', 'Streaming'],
+                screenshot: 'assets/tile-cbc-olympics.png'
+            },
+            {
+                name: 'Sportsnet',
+                description: 'Canada\'s premier sports media platform featuring live streaming, scores, and sports news.',
+                url: 'https://www.sportsnet.ca',
+                platforms: ['Web', 'iOS', 'Android', 'Streaming'],
+                screenshot: 'assets/tile-sportsnet.png'
+            },
+            {
+                name: 'World Cup of Hockey',
+                description: 'Digital experiences for the NHL / NHLPA internaional ice hockey championship tournament.',
+                url: 'https://www.sportsnet.ca/hockey/nhl/top-plays-world-cup-hockey-2016/',
+                platforms: ['Web','Streaming'],
+                screenshot: 'assets/tile-world-cup-of-hockey.png'
+            }
+        ];
+
+        function createProjectCard(project) {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            
+            const platformBadges = project.platforms.map(p => 
+                `<span class="platform-badge">${p}</span>`
+            ).join('');
+
+            const imageContent = project.screenshot 
+                ? `<img src="${project.screenshot}" alt="${project.name} screenshot" class="project-image">`
+                : `<div class="project-image">Add screenshot for ${project.name}</div>`;
+
+            card.innerHTML = `
+                <a href="${project.url}" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="${project.name}: ${project.description}">
+                    ${imageContent}
+                    <div class="project-overlay">
+                        <h3 class="project-title">${project.name}</h3>
+                        <p class="project-description">${project.description}</p>
+                        <div class="platforms" aria-label="Available platforms">
+                            ${platformBadges}
+                        </div>
+                    </div>
+                </a>
+            `;
+            
+            return card;
+        }
+
+        const grid = document.getElementById('projects-grid');
+        projects.forEach(project => {
+            grid.appendChild(createProjectCard(project));
+        });
+
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            document.querySelector('#work').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
