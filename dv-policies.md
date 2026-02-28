@@ -24,7 +24,7 @@ We aim to follow applicable privacy laws, including **Canada’s PIPEDA**, the *
 ### 1) 🕵️ Anonymous Account Data
 When you first use Design Vibes, we create an **anonymous account identifier** to operate core features (like cloud favourites).
 
-This may include:
+This includes:
 - an internal **anonymous user ID** (not your name/email)
 - app and device metadata needed to keep the app working reliably (e.g., app version, language)
 
@@ -65,7 +65,7 @@ Depending on your region and device settings, ads may be:
 - **non-personalized** (contextual), or
 - **personalized** (interest-based)
 
-You can control ad personalization through your device settings and (where available) in-app consent prompts.
+You can control ad personalization through your device settings and (where available).
 
 ---
 
@@ -183,11 +183,11 @@ You are responsible for your device and for maintaining access to it.
 ---
 
 ## ⭐ favourites (Cloud)
-favourites may be stored in the cloud and associated with your anonymous account.
+favourites are stored in the cloud and associated with your anonymous account.
 
 - Removing favourites in the app removes them from your favourites list.
 - Deleting the app may not remove cloud favourites by itself.
-- Use **“Delete My Account”** in the app to delete the anonymous account and associated favourites (subject to technical/backup limits). 🗑️
+- Use **“Delete My Account”** in the app to delete the anonymous account and associated favourites. 🗑️
 
 ---
 
@@ -196,7 +196,7 @@ Design Vibes provides curated home decor and design images for inspiration 🏡�
 
 - We do **not** claim ownership of third-party images.
 - Rights remain with their respective owners.
-- If you believe content infringes your rights, contact us from within the app (likes page, click the info icon on the top right and click the contact button) and we will review it. 🧾
+- If you believe content infringes your rights, contact us from within the app (likes page, click the info icon on the top right and click the contact button, or email gorvis@gmail.com) and we will review it. 🧾
 
 ---
 
@@ -214,7 +214,7 @@ To the maximum extent permitted by law, we disclaim warranties of merchantabilit
 ## 🧱 Limitation of Liability
 To the maximum extent permitted by law:
 - we are not liable for indirect, incidental, special, consequential, or punitive damages
-- our total liability for any claim is limited to the amount you paid for the app in the last 12 months (if any), or **$0** if the app was free
+- our total liability for any claim is limited to the amount you paid for the app in the last 12 months (if any), or **$0** as the app is free
 
 ---
 
@@ -233,5 +233,5 @@ We may update these Terms from time to time. We’ll update the “Last Updated�
 
 ---
 
-## ✉️ Contact Us
-For questions or feedback, contact us from within the app (likes page, click the info icon on the top right and click the contact button). 💬
+## ✉️ Contact Us / Support
+For support, questions or feedback, contact us from within the app (likes page, click the info icon on the top right and click the contact button) or email gorvis@gmail.com. 💬
