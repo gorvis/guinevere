@@ -515,7 +515,7 @@
                 name: 'Design Vibes',
                 description: 'Endless inspiration for home decor. Out on iOS. Android coming soon.',
                 url: 'https://apps.apple.com/us/app/design-vibes-home-decor/id6758281181',
-                platforms: ['AI','iOS', 'Android'],
+                platforms: ['iOS', {name: 'Policies', url: 'https://guinevere.ca/dv-policies.md'}],
                 screenshot: 'assets/tile-dv.png'
             },
             {
@@ -629,9 +629,12 @@
             const card = document.createElement('div');
             card.className = 'project-card';
             
-            const platformBadges = project.platforms.map(p => 
-                `<span class="platform-badge">${p}</span>`
-            ).join('');
+            const platformBadges = project.platforms.map(p => {
+                if (typeof p === 'object' && p.url) {
+                    return `<span class="platform-badge" style="cursor:pointer" onclick="event.stopPropagation();event.preventDefault();window.open('${p.url}','_blank','noopener,noreferrer')">${p.name}</span>`;
+                }
+                return `<span class="platform-badge">${p}</span>`;
+            }).join('');
 
             const imageContent = project.screenshot 
                 ? `<img src="${project.screenshot}" alt="${project.name} screenshot" class="project-image">`
